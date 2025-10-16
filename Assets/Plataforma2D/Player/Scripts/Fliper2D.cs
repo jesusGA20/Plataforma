@@ -24,6 +24,6 @@ public class Fliper2D : MonoBehaviour
         //gestiona el Flip
 
         //si nos movemos a la derecha
-        if (rb.linearVelocityX)
+        //if (rb.linearVelocityX)
     }
 }

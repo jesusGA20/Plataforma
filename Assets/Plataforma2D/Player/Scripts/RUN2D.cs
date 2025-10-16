@@ -10,13 +10,13 @@ public class RUN2D : MonoBehaviour
 
     //Referencia a componente
     Rigidbody2D rb;
-    Animation animator;
+    Animator animator;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb=GetComponent<Rigidbody2D>();
-        animator = GetComponentInChildren<Animation>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame

@@ -6,11 +6,14 @@ public class CONTROLANIMACIONES2D : MonoBehaviour
     float inputY;
     Rigidbody2D rb;
     Animator animator;
+
+    IGrounded2D grounded2D;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        grounded2D = GetComponentInChildren<IGrounded2D>();
     }
 
     // Update is called once per frame
@@ -18,11 +21,10 @@ public class CONTROLANIMACIONES2D : MonoBehaviour
     {
         inputX = Input.GetAxis("Horizontal");
         inputY = Input.GetAxis("Vertical");
-        if (Mathf.Abs(rb.linearVelocityY) > 0.1)
+        if (!grounded2D.IsGrounded || Mathf.Abs(rb.linearVelocityY) > 0.5f)
         {
- 
-                animator.Play("JUMP");
-                //animator.Play("FALL");
+            if (rb.linearVelocityY > 0.1) animator.Play("JUMP");
+            else animator.Play("FALL");
         }
         else if (Mathf.Abs(rb.linearVelocityX) < 0.1) animator.Play("IDLE");
         else animator.Play("RUN");

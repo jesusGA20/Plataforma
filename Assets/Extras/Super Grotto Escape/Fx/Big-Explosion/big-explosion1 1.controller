@@ -34,7 +34,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Activada
+    m_ConditionEvent: Activar
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6528963053754123225}
@@ -86,7 +86,7 @@ AnimatorController:
   m_Name: big-explosion1 1
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Activada
+  - m_Name: Activar
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
